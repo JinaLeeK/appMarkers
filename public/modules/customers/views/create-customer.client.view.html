@@ -6,8 +6,16 @@
     <form class="" data-ng-submit="create()" novalidate>
       <fieldset>
         <div class="row">
+          <div class="form-group">
+            <div data-ng-show="error" class="text-danger text-center">
+              <div class="alert alert-danger" role='alert'>
+                <strong data-ng-bind="error"></strong>
+              </div>
+            </div>
+          </div>
+
             <div class="col-sm-6 text-center">
-              <i class="glyphicon glyphicon-user cust-profile"></i>
+              <i class="glyphicon glyphicon-user cust-profile" ng-class="{'text-primary': referred, 'text-danger': !referred}"></i>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
@@ -89,15 +97,6 @@
         </div>
 
 
-
-
       </fieldset>
     </form>
-
-    <div data-ng-show="error" class="text-danger">
-      <strong data-ng-bind="error"></strong>
-    </div>
-  </div>
-
-
 </section>
